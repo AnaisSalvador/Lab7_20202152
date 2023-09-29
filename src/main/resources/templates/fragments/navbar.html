@@ -17,12 +17,12 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" th:classappend="${active == 'Employee'?'active':''}"
-             th:href="@{/employee}">Técnicos</a>
+          <a class="nav-link" th:classappend="${active == 'Tecnico'?'active':''}"
+             th:href="@{/tecnicos/tecnicoList}">Técnicos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:classappend="${active == 'Shipper'?'active':''}"
-             th:href="@{/shipper}">Estadisticas-Equipos</a>
+          <a class="nav-link" th:classappend="${active == 'Estequi'?'active':''}"
+             th:href="@{/estequi/estadisticaEquipoList}">Estadisticas-Equipos</a>
         </li>
       </ul>
     </div>
