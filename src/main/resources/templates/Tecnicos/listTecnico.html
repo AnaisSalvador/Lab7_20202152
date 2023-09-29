@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/navbar.html :: header( title = 'Lista Tecnico')}"></head>
+<body>
+<main>
+    <div class="container px-4 pb-5">
+        <nav th:replace="~{fragments/navbar.html :: navbar( active = 'Tecnico')}"></nav>
+        <h1 class="pb-2 border-bottom">Lista Tecnicos</h1>
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{'/Tecnicos/new'}">Nuevo Tecnico</a>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dni</th>
+                <th>Phone</th>
+                <th>Age</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tecnico, info : ${listaTecnico}">
+                <td th:text="${info.index + 1}"></td>
+                <td th:text="${tecnico.firstName}"></td>
+                <td th:text="${tecnico.lastName}"></td>
+                <td th:text="${tecnico.dni}"></td>
+                <td th:text="${tecnico.phone}"></td>
+                <td th:text="${tecnico.age}"></td>
+                <td><a class="btn btn-primary"
+                       th:href="@{'/Tecninos/editFrm' + '?id=' + ${tecnico.id}}">Editar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<script th:replace="~{fragments/navbar.html :: footer-bootstrap}"></script>
+</body>
+</html>

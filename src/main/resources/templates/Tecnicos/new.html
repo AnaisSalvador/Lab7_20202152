@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/navbar.html :: header( title = 'New Tecnicos')}"></head>
+<body>
+<div class="container">
+    <nav th:replace="~{fragments/navbar.html :: navbar( active = 'Tecnico')}"></nav>
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <h2>Nuevo Tecnico</h2>
+            <hr/>
+            <form th:action="@{'/tecnico/save'}" method="post">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="firstName" id="firstName"/>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" name="lastName" id="lastName"/>
+                </div>
+                <div class="mb-3">
+                    <label for="dni" class="form-label">DNI</label>
+                    <input type="text" class="form-control" name="dni" placeholder="726493155"
+                           id="dni"/>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="phone"/>
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="text" class="form-control" name="age" id="age"/>
+                </div>
+                <a th:href="@{'/tecnico'}" class="btn btn-danger">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:replace="~{fragments/navbar.html :: footer-bootstrap}"></script>
+</body>
+</html>
